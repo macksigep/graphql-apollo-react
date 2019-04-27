@@ -9,10 +9,10 @@ const port = config.port;
 app.use(cors());
 
 app.use('/', function(req, res) {
-let url = config.apiUrl + req.url;
+let url = config.apiUrl;
 let query = config.assignKey(req.query);
 
-req.pipe(request({ qs: query, url: url})).pipe(res);
+req.pipe(request({ qs: query, uri: url})).pipe(res);
 });
 
 app.listen(port, () => {

@@ -13,7 +13,7 @@ import { ApolloProvider } from 'react-apollo';
 const App = ({auth}) => {
 
 
-const graphUrl = 'https://hasura.io/graphql';
+const graphUrl = 'https://learn.hasura.io/graphql';
 
 const createApolloClient = (authToken) => {
   return new ApolloClient({
