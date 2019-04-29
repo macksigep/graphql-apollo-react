@@ -12,7 +12,7 @@ app.use('/', function(req, res) {
 let url = config.apiUrl;
 let query = config.assignKey(req.query);
 
-req.pipe(request({ qs: query, uri: url})).pipe(res);
+req.pipe(request({ qs: query, uri: 'https://learn.hasura.io/graphql/graphiql'})).pipe(res);
 });
 
 app.listen(port, () => {

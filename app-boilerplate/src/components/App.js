@@ -15,7 +15,7 @@ const App = ({auth}) => {
 
 const graphUrl = 'https://learn.hasura.io/graphql';
 
-const createApolloClient = (authToken) => {
+const createApolloClient = (authToken) => { 
   return new ApolloClient({
     link: new HttpLink({
       uri: graphUrl,

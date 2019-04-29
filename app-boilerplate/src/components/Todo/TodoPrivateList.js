@@ -68,6 +68,8 @@ class TodoPrivateList extends Component {
   }
 }
 
+export default TodoPrivateList;
+
 const GET_MY_TODOS = gql`
     query getMyTodos {
       todos(where: { is_public: { _eq: false} }, order_by: { created_at: desc }) {
@@ -78,24 +80,24 @@ const GET_MY_TODOS = gql`
       }
     }`;
 
-    const TodoPrivateListQuery = () => {
-      return (
-        <Query query={GET_MY_TODOS}>
-          {({ loading, error, data, client}) => {
-            if (loading) {
-              return(<div>Loading...</div>);
-            } 
-          if (error) {
-            console.error(error);
-            return(<div>Error!</div>);
-          }
-          return(<TodoPrivateList client={client} todos={data.todos} />);
-          }}
-        </Query>
-      );
-    };
+//     const TodoPrivateListQuery = () => {
+//       return (
+//         <Query query={GET_MY_TODOS}>
+//           {({ loading, error, data, client}) => {
+//             if (loading) {
+//               return(<div>Loading...</div>);
+//             } 
+//           if (error) {
+//             console.error(error);
+//             return(<div>Error Fetching Todos!</div>);
+//           }
+//           return(<TodoPrivateList client={client} todos={data.todos} />);
+//           }}
+//         </Query>
+//       );
+//     };
 
 
 
-export default TodoPrivateListQuery;
-export {GET_MY_TODOS};
+// export default TodoPrivateListQuery;
+// export {GET_MY_TODOS};

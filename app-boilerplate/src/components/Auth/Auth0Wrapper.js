@@ -52,6 +52,7 @@ export default class Auth0Wrapper extends React.Component {
   };
 
   getAccessToken() {
+    console.log("TOKEN", this.accessToken);
     return this.accessToken;
   }
 
